@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: app-nodejs-k8s
+  name: app-nodejs-k8s
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-nodejs-k8s
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: app-nodejs-k8s
+    spec:
+      containers:
+      - image: node:16
+        name: node
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
